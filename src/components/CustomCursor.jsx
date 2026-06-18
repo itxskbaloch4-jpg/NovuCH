@@ -70,13 +70,17 @@ export default function CustomCursor() {
             border: 1.5px solid var(--copper); border-radius: 50%;
             pointer-events: none; z-index: 9998; will-change: transform;
             transition: width 0.25s var(--ease-premium), height 0.25s var(--ease-premium),
-                        border-color 0.25s var(--ease-premium), background-color 0.25s var(--ease-premium);
+                        border-color 0.25s var(--ease-premium), background-color 0.25s var(--ease-premium),
+                        margin 0.25s var(--ease-premium);
           }
           .cursor-ring.cursor-hover {
             width: 56px; height: 56px; background: rgba(201, 84, 44, 0.1);
             margin: -12px 0 0 -12px;
           }
-          .cursor-ring.cursor-active { width: 24px; height: 24px; }
+          .cursor-ring.cursor-active {
+            width: 24px; height: 24px;
+            margin: 4px 0 0 4px;
+          }
         }
         @media (hover: none), (pointer: coarse) {
           .cursor-dot, .cursor-ring { display: none; }

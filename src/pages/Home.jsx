@@ -10,8 +10,7 @@ import { clientLogos, techStack, angebote, referenzen, heroPoints } from '../dat
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  const heroTextRef = useRef(null);
-  const parallaxRef = useRef(null);
+  const parallaxRef = useRef(null); // heroTextRef removed — was dead code
 
   useEffect(() => {
     document.title = 'novu — Code, Design & Konzept | Digitalagentur Zürich Bern Basel';
@@ -37,8 +36,8 @@ export default function Home() {
 
   return (
     <>
-      {/* HERO */}
-      <section className="hero" ref={heroTextRef}>
+      {/* HERO — ref removed, not needed */}
+      <section className="hero">
         <HeroCanvas />
         <div className="container hero-content">
           <span className="eyebrow hero-line">Digitalagentur Bern · Zürich · Basel</span>

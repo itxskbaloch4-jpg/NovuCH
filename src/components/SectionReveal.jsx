@@ -20,7 +20,7 @@ export default function SectionReveal({ children, delay = 0, y = 40, as: Tag = '
       );
     });
     return () => ctx.revert();
-  }, [delay, y]);
+  }, []); // ← Fixed: empty dependency array, runs only on mount
 
   return <Tag ref={ref} className={className}>{children}</Tag>;
 }

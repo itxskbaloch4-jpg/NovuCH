@@ -21,7 +21,6 @@ export default function Navbar() {
 
   useEffect(() => { setOpen(false); }, [location]);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
@@ -75,9 +74,6 @@ export default function Navbar() {
           backdrop-filter: blur(12px);
           box-shadow: 0 1px 0 var(--grey-line-dark);
         }
-        /* When mobile menu is open, force the nav bar itself to match the menu's
-           solid background so the logo/toggle row never looks "transparent"
-           or disconnected from the panel beneath it. */
         .nav-menu-open {
           background: var(--bg-light) !important;
           backdrop-filter: none !important;
@@ -85,7 +81,7 @@ export default function Navbar() {
         }
         .nav-inner {
           position: relative;
-          z-index: 1001; /* always sits above the mobile panel */
+          z-index: 1001;
           display: flex; align-items: center; justify-content: space-between;
         }
         .nav-logo { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--charcoal); }
@@ -127,7 +123,7 @@ export default function Navbar() {
             position: fixed;
             inset: 0;
             background: var(--bg-light);
-            z-index: 999; /* below nav-inner (1001) but above page content */
+            z-index: 999;
             opacity: 0;
             visibility: hidden;
             transform: translateY(-12px);
@@ -154,4 +150,4 @@ export default function Navbar() {
       `}</style>
     </header>
   );
-        }
+}

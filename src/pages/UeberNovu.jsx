@@ -57,7 +57,9 @@ export default function UeberNovu() {
             {offices.map((o, i) => (
               <SectionReveal key={o.city} delay={i * 0.1} className="office-card">
                 <h3>{o.city}</h3>
-                <p>{o.address.split('\n').map((line, idx) => <span key={idx}>{line}<br /></span>)}</p>
+                <p>{o.address.split('\n').map((line, idx, arr) => (
+                  <span key={idx}>{line}{idx < arr.length - 1 && <br />}</span>
+                ))}</p>
                 <a href={`mailto:${o.email}`} data-cursor="link">{o.email}</a>
                 <a href={`tel:${o.phone.replace(/\s/g, '')}`} data-cursor="link">{o.phone}</a>
               </SectionReveal>

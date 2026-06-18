@@ -13,7 +13,9 @@ export default function Footer() {
         {offices.map(o => (
           <div className="footer-office" key={o.city}>
             <h4>{o.city}</h4>
-            <p>{o.address.split('\n').map((line, i) => <span key={i}>{line}<br /></span>)}</p>
+            <p>{o.address.split('\n').map((line, i, arr) => (
+              <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
+            ))}</p>
             <a href={`mailto:${o.email}`} data-cursor="link">{o.email}</a>
             <a href={`tel:${o.phone.replace(/\s/g, '')}`} data-cursor="link">{o.phone}</a>
           </div>
